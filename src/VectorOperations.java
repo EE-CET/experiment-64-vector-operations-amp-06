@@ -5,44 +5,50 @@ public class VectorOperations {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Vector<String> students = new Vector<>();
-        
+
         while (scanner.hasNextInt()) {
             int choice = scanner.nextInt();
-            
+
             if (choice == 5) {
                 break;
             }
-            
+
             switch (choice) {
+
                 case 1:
-                    // TODO: Read the name and add it to the vector
-                    // Print "Added"
-                    
+                    // Add a student name
+                    String nameToAdd = scanner.next();
+                    students.add(nameToAdd);
+                    System.out.println("Added");
                     break;
-                    
+
                 case 2:
-                    // TODO: Read the name and the 1-based index
-                    // Insert the name at the correct 0-based index in the vector
-                    // Print "Inserted"
-                    
+                    // Insert at specific 1-based index
+                    String nameToInsert = scanner.next();
+                    int index = scanner.nextInt();
+
+                    // Convert 1-based index to 0-based
+                    students.add(index - 1, nameToInsert);
+                    System.out.println("Inserted");
                     break;
-                    
+
                 case 3:
-                    // TODO: Read the name and remove it from the vector
-                    // Print "Removed"
-                    
+                    // Remove a name
+                    String nameToRemove = scanner.next();
+                    students.remove(nameToRemove);
+                    System.out.println("Removed");
                     break;
-                    
+
                 case 4:
-                    // TODO: Display the vector
-                    
+                    // Display vector
+                    System.out.println(students);
                     break;
-                    
+
                 default:
                     System.out.println("Invalid choice");
             }
         }
-        
+
         scanner.close();
     }
 }
